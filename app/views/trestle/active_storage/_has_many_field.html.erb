@@ -20,7 +20,9 @@
             <% end %>
             <div>
               <small><%= attachment.blob.filename %></small>
-              <%= builder.check_box("delete_#{field_name}_#{attachment.blob_id}", label: "Delete this #{field_name.to_s.singularize}") %>
+              <% if attachment.blob_id %>
+                <%= builder.check_box("delete_#{field_name}_#{attachment.blob_id}", label: "Delete this #{field_name.to_s.singularize}") %>
+              <% end %>
             </div>
           </div>
           <hr>
